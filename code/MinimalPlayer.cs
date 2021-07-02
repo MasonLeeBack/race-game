@@ -2,8 +2,6 @@
 using System;
 using System.Linq;
 
-namespace MinimalExample
-{
 	partial class MinimalPlayer : Player
 	{
 		public override void Respawn()
@@ -67,4 +65,3 @@ namespace MinimalExample
 			EnableDrawing = false;
 		}
 	}
-}
