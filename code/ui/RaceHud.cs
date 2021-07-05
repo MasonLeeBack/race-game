@@ -9,9 +9,9 @@ public partial class RaceHud : HudEntity<RootPanel>
 		if (!IsClient)
 			return;
 		
-		RootPanel.StyleSheet.Load("/ui/RaceHud.scss");
+		RootPanel.StyleSheet.Load("/ui/mainpane.scss");
 		
-		RootPanel.AddChild<Speedometer>();
+		RootPanel.AddChild<MainPane>();
 		RootPanel.AddChild<ChatBox>();
 	}
 }

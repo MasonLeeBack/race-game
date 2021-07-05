@@ -8,7 +8,7 @@ namespace RaceGame.Player
 {
 	public partial class CarController : BasePlayerController
 	{
-		// Stuff
+		// Stats (to be moved to CarSelection/CarStats)
 		public float Acceleration = 1000.0f;
 		public float ReverseAcceleration = 200.0f;
 		public float TurnDamping = 0.9f;

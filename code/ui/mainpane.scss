@@ -1,0 +1,71 @@
+.mainpane { 
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	left: 0; 
+	bottom: 0;
+}
+
+text {
+	font-family: Poppins-Light;
+}
+
+.speedometer{
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+	
+	background-color: rgba(0,0,0,0.8);
+	padding: 0px 20px 0px 20px;
+	
+	.speedText {
+		color: white;
+		font-size: 50px;
+	}
+}
+
+.lapBox {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	
+	background-color: rgba(0,0,0,0.8);
+	padding: 0px 20px 0px 20px;
+	
+	.lapText {
+		color: white;
+		font-size: 25px;
+	}
+}
+
+.itemBox {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 50%;
+	border: 10px;
+	border-color: rgba(0,128,128,0.8);
+	padding: 20px;
+	
+	.item {
+		width: 64px;
+		height: 64px;
+		background-image: url( /textures/ui/bomb-test.png );
+		background-size: 64px;
+	}
+}
+
+.wipText {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	
+	background-color: rgba(0,0,0,0.8);
+	padding: 2px 20px;
+	border-radius: 20px;
+	
+	font-family: Poppins-Bold;
+	color: white;
+}
