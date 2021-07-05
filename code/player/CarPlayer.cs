@@ -4,15 +4,23 @@ namespace RaceGame.Player
 {
 	public partial class CarPlayer : Sandbox.Player
 	{
+		public PhysicsBody body = new PhysicsBody();
 		public override void Respawn()
 		{
 			base.Respawn();
-			SetModel( "models/vehicles/car.vmdl" );
-			// Temporart - link to CarController class for pawn
+			SetModel( "models/vehicles/gokart.vmdl" );
+			body.Enabled = true;
+			SetupPhysicsFromModel( PhysicsMotionType.Dynamic, true );
+
 			Controller = new CarController();
-			// Temporary - create CarCamera class
 			Camera = new CarCamera();
-			
+		}
+
+		public async void HandleMusic()
+		{
+			//PlaySound( "hardbass" );
+			await Task.Delay( 216000 );
+			//HandleMusic();
 		}
 
 		public override void Simulate( Client cl )

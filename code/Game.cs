@@ -33,6 +33,7 @@ namespace RaceGame
 			client.Pawn = player;
 
 			player.Respawn();
+			player.HandleMusic();
 		}
 	}
 

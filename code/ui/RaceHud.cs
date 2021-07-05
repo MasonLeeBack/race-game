@@ -12,5 +12,6 @@ public partial class RaceHud : HudEntity<RootPanel>
 		RootPanel.StyleSheet.Load("/ui/RaceHud.scss");
 		
 		RootPanel.AddChild<Speedometer>();
+		RootPanel.AddChild<ChatBox>();
 	}
 }

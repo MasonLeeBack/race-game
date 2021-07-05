@@ -12,6 +12,8 @@ namespace RaceGame.Player
 		public static float carcamera_distance { get; set; } = 1000.0f;
 		[ConVar.Replicated]
 		public static float carcamera_carheight { get; set; } = 64.0f;
+		[ConVar.Replicated]
+		public static float carcamera_above { get; set; } = 50.0f;
 
 		public CarCamera()
 		{
@@ -30,16 +32,14 @@ namespace RaceGame.Player
 			if ( pawn == null )
 				return;
 
-			Pos = pawn.Position;
+			// Get center position and distance
 			var center = pawn.Position + Vector3.Up * carcamera_carheight;
-			Pos = center;
 			float distance = carcamera_distance * pawn.Scale;
-			
-			
 
 			Vector3 targetPos;
-			targetPos = Pos;
+			targetPos = center;
 			targetPos += pawn.LocalRotation.Forward * -distance;
+			// Set target position to be higher in the air
 			targetPos += new Vector3( 0, 0, 50 );
 
 			Pos = targetPos;
