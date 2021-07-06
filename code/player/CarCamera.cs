@@ -39,14 +39,14 @@ namespace RaceGame.Player
 			Vector3 targetPos;
 			targetPos = center;
 			targetPos += pawn.LocalRotation.Forward * -distance;
-			// Set target position to be higher in the air
-			targetPos += new Vector3( 0, 0, 50 );
 
-			Pos = targetPos;
+			// Smooth Z height, and adjust to look over car
+			Pos = targetPos.WithZ(MathX.LerpTo(Pos.z, targetPos.z + 50, 10* Time.Delta));
 			FieldOfView = carcamera_fov;
 
+			// Look at center of car, and smooth turns (bug, when crossing over 360 degs, snaps back to 0 and causes a shake)
 			Vector3 forward = (center - Pos);
-			Rot = Rotation.LookAt( forward, Vector3.Up );
+			Rot = Rotation.Lerp( Rot, Rotation.LookAt( forward, Vector3.Up ), 20 * Time.Delta );
 
 			Viewer = null;
 		}

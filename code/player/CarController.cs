@@ -81,11 +81,10 @@ namespace RaceGame.Player
 
 			if ( carcontroller_debug )
 			{
-				DebugOverlay.ScreenText( 0, "  CAR STATS  " );
-				DebugOverlay.ScreenText( 1, $"    Position: {Position}" );
-				DebugOverlay.ScreenText( 2, $"    Velocity: {Velocity}" );
-				DebugOverlay.ScreenText( 3, $"WishVelocity: {WishVelocity}" );
-				DebugOverlay.ScreenText( 4, $"BaseVelocity: {BaseVelocity}" );
+				DebugOverlay.ScreenText( 10, "  CAR STATS  " );
+				DebugOverlay.ScreenText( 11, $"    Position: {Position}" );
+				DebugOverlay.ScreenText( 12, $"    Rotation: {Rotation}" );
+				DebugOverlay.ScreenText( 13, $"    VphysRot: {(Pawn as CarPlayer).PhysicsBody.Rotation}" );
 			}
 
 		}
